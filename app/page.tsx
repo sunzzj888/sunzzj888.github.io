@@ -1,25 +1,37 @@
-import { ArrowUpRight, Mail, MapPin } from "lucide-react";
+import { ArrowUpRight, Github, Mail, MapPin } from "lucide-react";
 
-const papers = [
-  { venue:"ACL 2026 · Main", role:"共同一作", title:"SGPVT: Self-Generated Proximal Visual Tokens for Mitigating Collateral Damage in MLLM Unlearning", text:"在删除目标概念的同时保护语义相邻知识。提出自适应余弦图像扰动与双流对抗训练，在 LLaVA-1.5 / 13B 上将近端概念保留准确率提升 3–5%。", tags:["MLLM Unlearning","Knowledge Retention","Benchmark"], href:"https://aclanthology.org/2026.acl-long.442.pdf", link:"ACL Anthology" },
-  { venue:"KDD 2027 · Under Review", role:"第一作者", title:"What to Edit Next: Visually Grounded Follow-up Recommendation for Image Editing", text:"构建图像编辑追问推荐的 SFT—奖励建模—多目标 GRPO 链路，并设计源—目标视觉校验器。系统已上线千问 App，14 天 A/B 中 CTR +32.70%。", tags:["Visual Alignment","Recommendation","GRPO"] },
-  { venue:"AAAI 2026 · Under Review", role:"第一作者", title:"SPACE: Source-Free Concept Unlearning for Multimodal Large Language Models", text:"面向无法访问目标视觉数据的隐私场景，提出基于代理的间接遗忘范式，通过 TPAS 检索语义锚点，并以 DCSI 约束更新方向。", tags:["Source-free","Machine Unlearning","Privacy"], href:"https://arxiv.org/abs/2606.09868", link:"arXiv" },
+const publications = [
+  { venue: "ACL 2026 · Main", title: "SGPVT: Self-Generated Proximal Visual Tokens for Mitigating Collateral Damage in MLLM Unlearning", authors: "张芷境（共同一作）等", summary: "提出自生成近端视觉令牌与双流对抗训练，在完全遗忘目标概念的同时，使近端概念保留准确率提升 3–5%。", links: [{ label: "Paper", href: "https://aclanthology.org/2026.acl-long.442.pdf" }] },
+  { venue: "KDD 2027 · Under Review", title: "What to Edit Next: Visually Grounded Follow-up Recommendation for Image Editing", authors: "张芷境（第一作者）等", summary: "构建视觉对齐的多模态追问推荐框架并上线千问 App；14 天 A/B 实验中 CTR +32.70%，图像留存率 +16.32%。", links: [] },
+  { venue: "AAAI 2026 · Under Review", title: "SPACE: Source-Free Concept Unlearning for Multimodal Large Language Models", authors: "张芷境（第一作者）等", summary: "提出基于代理的无源概念遗忘范式，在无法访问目标视觉数据时，通过语义锚点与更新方向约束实现有效遗忘。", links: [{ label: "arXiv", href: "https://arxiv.org/abs/2606.09868" }] },
 ];
 
-const jobs = [
-  ["2026.08 — 至今","蚂蚁 · 百灵基座大模型","基座后训练算法实习生 · Agentic RL","参与基座模型 Agent 能力后训练与强化学习对齐，覆盖 40K+ SFT 轨迹、sandbox rollout、过程与结果奖励联合优化。内部评测中工具调用 F1 提升 10+ 点，复杂任务成功率提升 8+ 点。"],
-  ["2026.03 — 至今","阿里巴巴 · 千问事业群","多模态后训练算法实习生","负责 Qwen3-VL-8B 图像编辑追问推荐从数据构建、后训练到上线评估的全链路。基于 173K 位置感知偏好对训练奖励模型，视觉不一致率由 3.7% 降至 0.9%。"],
-  ["2025.02 — 2025.07","科大讯飞 · 洛阳研究院","多模态大模型算法实习生","构建覆盖 70+ 疾病的多模态指令数据并完成垂域微调，将智慧养殖疾病召回率由 33% 提升至 74%，方案面向中粮集团完成业务试点。"],
-  ["2024.07 — 2025.01","华为上海研究所 · 无线网络产品线","大模型应用算法实习生 · 代码智能 Agent","参与百万行级代码库的需求解析、RAG 检索、代码生成与静态校验链路，多 Agent 系统批量检出高危缺陷并被内部质检平台采纳。"],
+const experience = [
+  ["2026.08 — 至今", "蚂蚁 · 百灵基座大模型", "基座后训练算法实习生 · Agentic RL", "参与 Agent 能力后训练与强化学习对齐，覆盖 40K+ SFT 轨迹、sandbox rollout、过程与结果奖励联合优化。"],
+  ["2026.03 — 至今", "阿里巴巴 · 千问事业群", "多模态后训练算法实习生", "负责 Qwen3-VL-8B 图像编辑追问推荐从数据构建、后训练到上线评估的完整链路。"],
+  ["2025.02 — 2025.07", "科大讯飞 · 洛阳研究院", "多模态大模型算法实习生", "构建覆盖 70+ 疾病的多模态指令数据，疾病召回率由 33% 提升至 74%。"],
+  ["2024.07 — 2025.01", "华为上海研究所", "大模型应用算法实习生 · 代码智能 Agent", "参与百万行级代码库的需求解析、RAG 检索、代码生成与静态校验链路。"],
 ];
 
-export default function Home(){return <main>
-  <header className="site-header"><a className="wordmark" href="#top">张芷境 <span>/ ZJ</span></a><nav><a href="#research">研究</a><a href="#experience">经历</a><a href="#projects">项目</a><a href="#contact">联系</a></nav><a className="header-mail" href="mailto:1213760905@qq.com">Email <ArrowUpRight size={14}/></a></header>
-  <section className="hero" id="top"><div className="kicker"><span/> MULTIMODAL AI · POST-TRAINING · ALIGNMENT</div><h1>让多模态模型<br/><em>学会，也懂得忘记。</em></h1><div className="hero-bottom"><p className="intro">我是张芷境，东南大学计算机技术硕士研究生。我的研究聚焦于多模态大模型的后训练、对齐与机器遗忘，关注模型能力、可靠性与真实应用之间的连接。</p><div className="hero-meta"><p><MapPin size={16}/> 南京，中国</p><p className="status"><span/> Open to research collaborations</p></div></div><div className="orbit" aria-hidden="true"><span>MLLM</span></div></section>
-  <section className="metrics"><div><strong>03</strong><span>Selected papers</span></div><div><strong>02</strong><span>First-author works</span></div><div><strong>4+</strong><span>Industry labs</span></div><div><strong>10M+</strong><span>Users reached</span></div></section>
-  <section className="section" id="research"><div className="section-label"><span>01</span><p>SELECTED RESEARCH</p></div><div className="section-content"><div className="section-heading"><h2>研究工作</h2><p>围绕多模态模型的知识边界、视觉对齐与可信后训练展开。</p></div><div className="paper-list">{papers.map((p,i)=><article className="paper" key={p.title}><div className="paper-index">0{i+1}</div><div className="paper-body"><div className="paper-meta"><span>{p.venue}</span><span>{p.role}</span></div><h3>{p.title}</h3><p>{p.text}</p><div className="paper-footer"><div>{p.tags.map(t=><span key={t}>{t}</span>)}</div>{p.href&&<a href={p.href} target="_blank" rel="noreferrer">{p.link}<ArrowUpRight size={15}/></a>}</div></div></article>)}</div></div></section>
-  <section className="section experience-section" id="experience"><div className="section-label"><span>02</span><p>EXPERIENCE</p></div><div className="section-content"><div className="section-heading"><h2>产业研究经历</h2><p>把研究方法带入真实、复杂且规模化的模型系统。</p></div><div className="timeline">{jobs.map(j=><article key={j[1]}><time>{j[0]}</time><div><h3>{j[1]}</h3><h4>{j[2]}</h4><p>{j[3]}</p></div></article>)}</div></div></section>
-  <section className="feature" id="projects"><div className="feature-top"><span>FEATURED PROJECT · 2023—2025</span><span>CORE ALGORITHM LEAD</span></div><div className="feature-grid"><div><p className="kicker">MONTAGE AI</p><h2>从热点到成片的<br/>全流程内容生产 Agent</h2></div><div className="feature-copy"><p>主导设计“热点追踪—文案生成—素材收集—素材匹配—内容裂变”自动化链路，并提出 Vitex 视频形式化描述体系。</p><div className="feature-numbers"><p><strong>82%</strong><span>语义匹配准确率</span></p><p><strong>300+</strong><span>日均自动化视频</span></p><p><strong>−60%</strong><span>内容制作成本</span></p></div></div></div><p className="award-note">国家级一等奖 · 全球校园人工智能算法精英大赛</p></section>
-  <section className="education section"><div className="section-label"><span>03</span><p>EDUCATION & HONORS</p></div><div className="section-content edu-grid"><div><h2>东南大学</h2><p>计算机技术 · 硕士（推免）</p><time>2025.09 — 2028.06</time><p className="degree">软件工程 · 学士</p><time>2021.09 — 2025.06</time></div><ul><li><span>2025</span>东南大学一等学业奖学金</li><li><span>2024</span>东南大学至善奖学金</li><li><span>2023</span>全球校园人工智能算法精英大赛 · 国家一等奖</li></ul></div></section>
-  <footer id="contact"><p className="kicker">LET’S CONNECT</p><h2>对研究合作、模型对齐<br/>或有意思的想法感兴趣？</h2><a href="mailto:1213760905@qq.com"><Mail size={19}/> 1213760905@qq.com <ArrowUpRight size={18}/></a><div className="footer-bottom"><span>张芷境 · Academic Homepage</span><span>Built with curiosity in Nanjing.</span></div></footer>
-</main>}
+export default function Home() {
+  return <>
+    <header className="topbar"><a className="brand" href="#home">ZHIJING ZHANG</a><nav aria-label="页面导航"><a href="#home">About</a><a href="#news">News</a><a href="#publications">Publications</a><a href="#experience">Experience</a><a href="#education">Education</a></nav></header>
+    <main className="layout" id="home">
+      <aside className="profile">
+        <div className="portrait" aria-label="张芷境姓名缩写"><span>ZZ</span><i /></div>
+        <h1>张芷境</h1><p className="english-name">Zhijing Zhang</p><p className="role">M.S. Student · Southeast University</p>
+        <div className="contact-list"><a href="mailto:1213760905@qq.com"><Mail size={16}/> Email</a><span><MapPin size={16}/> Nanjing, China</span><a href="https://github.com/sunzzj888" target="_blank" rel="noreferrer"><Github size={16}/> GitHub</a></div>
+        <p className="interest-label">Research Interests</p><div className="interests"><span>Multimodal LLMs</span><span>Post-training</span><span>Alignment</span><span>Machine Unlearning</span></div>
+      </aside>
+      <div className="content">
+        <section className="about"><p className="eyebrow">ABOUT ME</p><h2>让多模态模型<br/><em>学会，也懂得忘记。</em></h2><p>我是东南大学计算机技术硕士研究生，研究聚焦于<strong>多模态大模型后训练、对齐与机器遗忘</strong>。我关注如何在提升模型能力的同时，使其知识边界更加可靠，并将研究方法落地到真实的大规模产品中。</p><p>目前，我在蚂蚁百灵基座大模型团队参与 Agentic RL 方向研究，并在阿里巴巴千问事业群开展多模态后训练工作。我也曾在科大讯飞与华为从事多模态模型和代码智能 Agent 研发。</p><div className="availability"><span/> Open to research collaborations</div></section>
+        <section id="news"><div className="section-title"><span>01</span><h2>🔥 News</h2></div><ul className="news-list"><li><time>2026.08</time><p>加入蚂蚁百灵基座大模型团队，开展 Agentic RL 与后训练研究。</p></li><li><time>2026.06</time><p><strong>SGPVT</strong> 被 ACL 2026 Main Conference 接收。</p></li><li><time>2026.03</time><p>加入阿里巴巴千问事业群，负责多模态图片编辑追问推荐。</p></li><li><time>2025.11</time><p>获东南大学一等学业奖学金。</p></li></ul></section>
+        <section id="publications"><div className="section-title"><span>02</span><h2>📝 Publications</h2></div><div className="publication-list">{publications.map((paper) => <article className="publication" key={paper.title}><div className="pub-mark"><span>{paper.venue.split(" · ")[0]}</span><small>{paper.venue.split(" · ")[1]}</small></div><div><h3>{paper.title}</h3><p className="authors">{paper.authors}</p><div className="paper-links">{paper.links.map(link => <a key={link.label} href={link.href} target="_blank" rel="noreferrer">{link.label}<ArrowUpRight size={13}/></a>)}</div><p className="tldr"><strong>TL;DR:</strong> {paper.summary}</p></div></article>)}</div></section>
+        <section id="experience"><div className="section-title"><span>03</span><h2>🔬 Research Experience</h2></div><div className="experience-list">{experience.map(item => <article key={item[1]}><time>{item[0]}</time><div><h3>{item[1]}</h3><h4>{item[2]}</h4><p>{item[3]}</p></div></article>)}</div></section>
+        <section id="projects"><div className="section-title"><span>04</span><h2>🚀 Selected Project</h2></div><div className="project-card"><div><p className="eyebrow">2023 — 2025 · CORE ALGORITHM LEAD</p><h3>MontageAI</h3><p>全流程自动化视频内容生产 Agent 系统。设计 Vitex 视频形式化描述体系，在 50 万级素材库上实现 82% 精准语义匹配，支持日均 300+ 视频自动化生产。</p></div><dl><div><dt>82%</dt><dd>语义匹配准确率</dd></div><div><dt>−60%</dt><dd>内容制作成本</dd></div></dl></div></section>
+        <section id="education"><div className="section-title"><span>05</span><h2>🎓 Education & Honors</h2></div><div className="education-grid"><div><h3>东南大学</h3><p>计算机技术 · 硕士（推免）</p><time>2025.09 — 2028.06</time><p>软件工程 · 学士</p><time>2021.09 — 2025.06</time></div><ul><li><time>2025</time>东南大学一等学业奖学金</li><li><time>2024</time>东南大学至善奖学金</li><li><time>2023</time>全球校园人工智能算法精英大赛 · 国家一等奖</li></ul></div></section>
+        <footer><p>© 2026 Zhijing Zhang · Built with curiosity in Nanjing.</p><a href="#home">Back to top ↑</a></footer>
+      </div>
+    </main>
+  </>;
+}
