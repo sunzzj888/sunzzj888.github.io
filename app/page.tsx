@@ -1,4 +1,4 @@
-import { ArrowUpRight, Github, Mail, MapPin } from "lucide-react";
+import { ArrowUpRight, Mail, MapPin } from "lucide-react";
 
 const publications = [
   { venue: "ACL 2026 · Main", title: "SGPVT: Self-Generated Proximal Visual Tokens for Mitigating Collateral Damage in MLLM Unlearning", authors: "张芷境（共同一作）等", summary: "提出自生成近端视觉令牌与双流对抗训练，在完全遗忘目标概念的同时，使近端概念保留准确率提升 3–5%。", links: [{ label: "Paper", href: "https://aclanthology.org/2026.acl-long.442.pdf" }] },
@@ -20,7 +20,7 @@ export default function Home() {
       <aside className="profile">
         <div className="portrait" aria-label="张芷境姓名缩写"><span>ZZ</span><i /></div>
         <h1>张芷境</h1><p className="english-name">Zhijing Zhang</p><p className="role">M.S. Student · Southeast University</p>
-        <div className="contact-list"><a href="mailto:1213760905@qq.com"><Mail size={16}/> Email</a><span><MapPin size={16}/> Nanjing, China</span><a href="https://github.com/sunzzj888" target="_blank" rel="noreferrer"><Github size={16}/> GitHub</a></div>
+        <div className="contact-list"><a href="mailto:1213760905@qq.com"><Mail size={16}/> Email</a><span><MapPin size={16}/> Nanjing, China</span><a href="https://github.com/sunzzj888" target="_blank" rel="noreferrer"><b aria-hidden="true">↗</b> GitHub</a></div>
         <p className="interest-label">Research Interests</p><div className="interests"><span>Multimodal LLMs</span><span>Post-training</span><span>Alignment</span><span>Machine Unlearning</span></div>
       </aside>
       <div className="content">
